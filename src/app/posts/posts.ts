@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { PostsService } from '../posts';
 
 @Component({
   selector: 'app-posts',
@@ -9,7 +10,15 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './posts.scss',
 })
 export class Posts {
-  @Input() userPosts: any[] = [];
+  constructor(private postsService: PostsService) {}
+
+  ngOnInit() {
+    this.postsService.fetchPosts().subscribe((posts) => {
+      this.userPosts = posts;
+    });
+  }
+
+  userPosts: any[] = [];
   likedPosts: Set<number> = new Set();
   newComments: Record<number, string> = {};
 
