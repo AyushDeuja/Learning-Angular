@@ -11,7 +11,7 @@ export class RoleBasedAccess {
 
   @Input() set appRoleBasedAccess(requiredRole: string) {
     this.viewContainer.clear();
-    const currentUserRole = 'Admin';
+    const currentUserRole = 'User';
 
     if (currentUserRole === requiredRole) {
       this.viewContainer.createEmbeddedView(this.templateRef);

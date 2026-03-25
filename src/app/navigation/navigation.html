@@ -1,0 +1,16 @@
+<div *appRoleBasedAccess="'Admin'">
+  <button>Edit User Settings</button>
+  <button>Manage Content</button>
+</div>
+
+<div *appRoleBasedAccess="'Editor'">
+  <button>Edit Post</button>
+  <button>Moderate Comments</button>
+</div>
+
+<div *appRoleBasedAccess="'User'">
+  <p>Welcome User</p>
+</div>
+
+<a routerLink="posts">My Posts</a>
+<a routerLink="profile">My Profile</a>

@@ -2,11 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PostsService } from '../posts';
-import { RoleBasedAccess } from '../role-based-access';
 
 @Component({
   selector: 'app-posts',
-  imports: [CommonModule, FormsModule, RoleBasedAccess],
+  imports: [CommonModule, FormsModule],
   templateUrl: './posts.html',
   styleUrl: './posts.scss',
 })
